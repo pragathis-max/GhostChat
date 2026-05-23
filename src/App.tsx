@@ -91,7 +91,7 @@ export default function App() {
     }
 
     const socket: Socket = io({
-      transports: ["websocket", "polling"],
+      transports: ["polling", "websocket"],
       autoConnect: true,
     });
 
@@ -144,6 +144,11 @@ export default function App() {
         playSoundcast(data.soundType);
       }
       setActiveSoundcast(data);
+    });
+
+    socket.on("connect", () => {
+      console.log("Socket connected successfully");
+      setGlobalError("");
     });
 
     socket.on("connect_error", (err) => {

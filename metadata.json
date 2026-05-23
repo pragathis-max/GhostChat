@@ -1,0 +1,6 @@
+{
+  "name": "GhostChat",
+  "description": "GhostChat is a modern, anonymous, temporary chat platform featuring an elegant neon glassmorphism UI, real-time messaging, and temporary session-based rooms with zero database storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

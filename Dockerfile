@@ -22,8 +22,8 @@ WORKDIR /app
 
 # Set variables for production environment
 ENV NODE_ENV=production
-# Render typically assigns a dynamic port, defaulting to 10000 is standard
-ENV PORT=10000
+# Hugging Face Spaces defaults to port 7860
+ENV PORT=7860
 
 # Copy package config for production dependencies
 COPY package.json package-lock.json* ./
@@ -35,7 +35,7 @@ RUN npm install --only=production
 COPY --from=builder /app/dist ./dist
 
 # Expose target socket port for ingress routing
-EXPOSE 10000
+EXPOSE 7860
 
 # CMD starts the compiled CommonJS bundle
 CMD ["node", "dist/server.cjs"]
